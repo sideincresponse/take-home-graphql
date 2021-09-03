@@ -3,7 +3,7 @@ import {getAppContext} from './context/AppContext.js';
 
 const appContext = getAppContext(process.env.NODE_ENV);
 console.log('appcontext: ', appContext);
-//const app = express();
+const app = express();
 
 // Please use apollo server to implement your graphql query
 // const { ApolloServer } = require('apollo-server-express');

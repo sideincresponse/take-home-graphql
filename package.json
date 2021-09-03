@@ -10,12 +10,13 @@
   "scripts": {
     "test": "NODE_ENV=test jest",
     "start:app": "NODE_ENV=dev node index.js",
-    "start:db": "node database.js"
+    "start:db": "node createDB.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "3.3.0",
+    "axios": "^0.21.1",
     "express": "4.17.1",
     "jest": "27.1.0",
     "mongodb": "4.1.1"
