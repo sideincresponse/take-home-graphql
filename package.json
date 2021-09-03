@@ -1,14 +1,15 @@
 {
   "name": "senior-backend-graphql",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "engines": {
     "node": "^12"
   },
   "scripts": {
-    "test": "jest",
-    "start:app": "node index.js",
+    "test": "NODE_ENV=test jest",
+    "start:app": "NODE_ENV=dev node index.js",
     "start:db": "node database.js"
   },
   "author": "",
