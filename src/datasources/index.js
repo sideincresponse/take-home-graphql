@@ -8,8 +8,7 @@ export const getDataSources = async (appContext) => {
     const {Users, FavoriteListings} = getPersistAPI();
 
     //return a function that returns an object that insantiates datasource classes
-    const dsFunc = () => {
-        // console.log('dsFunc dbClient: ', dbClient);
+    const dsFunc = () => {        
         return { 
             listingAPI: new ListingAPI(), 
             persistAPI: { 
