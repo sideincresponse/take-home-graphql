@@ -1,9 +1,11 @@
-module.exports = `
+//import { gql } from 'apollo-server';
+
+export const types = `
     type Listing {
         favoriteCount: Int
         privateRemarks: String
         showingContactName: String
-        mlsId: Int
+        mlsId: ID
         showingContactPhone: String
         terms: String
         showingInstructions: String

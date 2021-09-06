@@ -25,6 +25,11 @@ import { MongoClient } from 'mongodb';
         seedUsers(db, function(err, result) {
             if(err) throw new Error("Error seeding");
             console.log("Seeded the following users into users collection: ", result);
+            
+        });
+        seedFavorites(db, function(err, result) {
+            if(err) throw new Error("Error creating favorites collection");
+            console.log("results: ", result);
             client.close();
         });
     });
@@ -41,4 +46,9 @@ const seedUsers = function(db, callback) {
     }], function(err, result) {
         callback(err, result);
     });
+}
+
+const seedFavorites = async function(db, callback) {
+    const favoriteCollection = await db.createCollection('favorites');
+    callback(null, favoriteCollection);
 }
