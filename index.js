@@ -1,18 +1,13 @@
-const express = require('express');
-const app = express();
+import { getAppContext } from './src/context/AppContext.js';
 
-// Please use apollo server to implement your graphql query
-// const { ApolloServer } = require('apollo-server-express');
-// const server = new ApolloServer({
-//  //...
-// });
-// server.applyMiddleware({ app, path:"/graphql" });
+const appContext = getAppContext(process.env.NODE_ENV);
 
-/** Please remove me line 11-14 **/
-app.get('*', (req, res, next) => {
-    res.send("Good luck! 😀")
-});
+appContext.createHTTPServer(appContext.createExpressApp());
 
-app.listen({ port: 4000 }, () =>
-    console.log(`Listening on http://localhost:4000/graphql`)
-);
+const success = await appContext.createApolloServer(appContext);
+if(success) {
+    const { apolloServer, expressApp } = await appContext.startServer();
+}
+
+
+
