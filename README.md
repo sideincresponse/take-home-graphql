@@ -2,7 +2,7 @@
 
 This response was built and tested with Node v14.17 and NPM 6.14. This is important because the solution utilizes ES Modules, which are supported in Node 14 using the `type: module` field in package.json. 
 
-NPM was used to install dependencies and run the applications and tests, yarn barfed on installing babel for some reason. DB running is required for one test, so ammended instructions are:
+NPM was used to install dependencies and run the applications and tests, yarn barfed on installing babel for some reason. DB running is required for one test, so amended instructions are:
 - npm i
 - npm run start:db
 - npm run test
