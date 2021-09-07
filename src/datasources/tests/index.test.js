@@ -9,14 +9,11 @@ describe('getDataSources should exist', () => {
         expect(typeof getDataSources).toBe('function');
     });
 
-    it('getDataSources has required functions', async () => {
-        console.log('appcontext: ', appContext);
-       const dsfunc = await getDataSources(appContext);
-        console.log('dsfunc:', dsfunc)
+    it('getDataSources has required functions', async () => {       
+       const dsfunc = await getDataSources(appContext);        
        expect(typeof dsfunc).toBe('function');
        
        const sources = dsfunc();
-
        expect(typeof sources).toBe('object');
 
     });

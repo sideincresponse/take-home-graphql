@@ -15,8 +15,7 @@ describe('getPersistAPI should exist', () => {
         
         const usersDB = new Users(db);
         const favs = new FavoriteListings(db);
-
-        console.log('usersdb: ', typeof usersDB.getUser);
+        
         expect(favs).toHaveProperty('dbClient');
         expect(usersDB).toHaveProperty('dbClient');
         expect(typeof usersDB.getUser).toBe('function');
