@@ -24,7 +24,7 @@ export const createApolloServer = async (appContext) => {
         plugins: appContext.getApolloPlugins(appContext.getHTTPServer()), 
         dataSources: await appContext.getApolloDataSources(appContext),
         context: await appContext.getApolloContext(appContext),
-    }
+    };
 
     // return started Apollo Server
     return await startApolloServer(apolloConfig);
