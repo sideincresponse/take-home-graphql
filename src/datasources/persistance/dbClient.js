@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
 
 export const getDBClient = async ({dbURI, dbName}) => {
-    try {        
+    try {
         const client = new MongoClient(dbURI);
         await client.connect();
         const db = client.db(dbName);        

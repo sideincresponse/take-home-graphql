@@ -8,7 +8,7 @@
     "node": "^12"
   },
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "jest --forceExit",
     "start:app": "cross-env NODE_ENV=dev node index.js",
     "start:db": "node createDB.js"
   },

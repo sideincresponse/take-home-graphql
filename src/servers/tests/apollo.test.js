@@ -1,5 +1,5 @@
-import { getAppContext } from '../context/AppContext.js';
-import {createApolloServer, getApolloContext, startApolloServer} from './apollo.js';
+import { getAppContext } from '../../context/AppContext.js';
+import {createApolloServer, getApolloContext, startApolloServer} from '../apollo.js';
 const appContext = getAppContext(process.env.NODE_ENV);
 describe('apollo server ', ()=> {
     beforeEach(() => {

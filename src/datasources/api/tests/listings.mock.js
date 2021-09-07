@@ -11,6 +11,5 @@ export const getListingAPI = (baseUrl, apiCreds) => {
        }
    };
     
-
     return ListingAPI;
 };
