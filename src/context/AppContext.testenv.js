@@ -1,32 +1,31 @@
 
-import http from 'http';
-import express from 'express';
-import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core'; 
-import { createApolloServer, getApolloContext } from '../servers/apollo.js';
+import { createApolloServer, getApolloContext } from '../servers/tests/apollo.mocks.js';
 import { typeDefs } from '../schema/index.js';
-import { resolvers } from '../resolvers/index.js';
-import { getDataSources } from '../datasources/index.js';
-import { getDBClient } from '../datasources/persistance/dbClient.js';
+import { resolvers } from '../resolvers/tests/index.mock.js';
+import { getDataSources } from '../datasources/tests/index.mock.js';
+import { getDBClient } from '../datasources/persistance/tests/dbClient.mock.js';
 
 let expressApp = null;
 let httpServer = null;
 let apolloServer = null;
 const config = {
-    dbURI: 'prodDB',
+    dbURI: 'mongodb://127.0.0.1:27017/',
     dbName: 'properties',
     propertyApiURI: 'https://api.simplyrets.com/',
     propertyAPIcreds: {
         user: 'simplyrets',
         apiToken: 'simplyrets',
     },    
-    port: 443,
-    ssl: true,
+    port: 4000,
+    ssl: false,
     hostname: 'localhost'
 };
 
-export const devContext = {
+export const testContext = {
     createExpressApp: () => {
-        expressApp = express();
+        expressApp = () => {
+            console.log('fake express app');
+        };
         return expressApp;
     },
 
@@ -35,7 +34,9 @@ export const devContext = {
     },
 
     createHTTPServer: (expressApp) => {
-        httpServer = http.createServer(expressApp);
+        httpServer = () => {
+            console.log('fake http server');
+        }
         return httpServer;
     },
 
@@ -51,11 +52,7 @@ export const devContext = {
 
     startServer: async () => {
        // start server with all middleware set up
-        await new Promise(resolve => httpServer.listen({ port: config.port }, resolve));
-
-        console.log('🚀 Server ready at',
-            `http${config.ssl ? 's' : ''}://${config.hostname}:${config.port}${apolloServer.graphqlPath}`
-        );
+        console.log('fake start server');
         return { apolloServer, expressApp };
     },
 
@@ -69,7 +66,7 @@ export const devContext = {
 
     getApolloPlugins: (httpServer) => 
     {
-        return [ApolloServerPluginDrainHttpServer({ httpServer })];
+        return [];    
     },
 
     getApolloDataSources: (appContext) =>
@@ -93,6 +90,6 @@ export const devContext = {
 
     getResolvers: () => {
         return resolvers;
-    }
+    } 
 
 };

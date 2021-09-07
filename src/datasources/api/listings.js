@@ -3,7 +3,8 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 
 // This is a function that returns a class defintion
 // Went this route because of unfamiliarity with how to
-// implement RESTDataSource outside of a class 
+// implement RESTDataSource outside of a class as well as supporting
+// a more flexible pattern for dependency injection
 export const getListingAPI = (baseUrl, apiCreds) => {
    
     class ListingAPI extends RESTDataSource {

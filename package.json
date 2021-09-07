@@ -8,8 +8,8 @@
     "node": "^12"
   },
   "scripts": {
-    "test": "NODE_ENV=test jest",
-    "start:app": "NODE_ENV=dev node index.js",
+    "test": "jest --forceExit",
+    "start:app": "cross-env NODE_ENV=dev node index.js",
     "start:db": "node createDB.js"
   },
   "author": "",
@@ -26,6 +26,10 @@
     "mongodb": "4.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "babel-jest": "^27.1.0",
+    "cross-env": "^7.0.3",
     "mongodb-memory-server": "7.3.6",
     "mongodb-memory-server-core": "7.3.6",
     "mongodb-memory-server-global": "7.3.6"
