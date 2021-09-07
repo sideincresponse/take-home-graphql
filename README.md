@@ -7,6 +7,8 @@ NPM was used to install dependencies and run the applications and tests, yarn ba
 - npm run start:db
 - npm run test
 - npm run start:app
+- navigate in browser to http://localhost:4000/graphql
+
 
 ## Architecture
 The response utilizes a general philosophy and methodology based on Clean Architecture:
