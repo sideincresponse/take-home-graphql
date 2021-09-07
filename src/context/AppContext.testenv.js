@@ -21,7 +21,7 @@ const config = {
     hostname: 'localhost'
 };
 
-export const devContext = {
+export const testContext = {
     createExpressApp: () => {
         expressApp = () => {
             console.log('fake express app');
