@@ -7,6 +7,7 @@ NPM was used to install dependencies and run the applications and tests, yarn ba
 - npm run start:db
 - npm run test
 - npm run start:app
+- set Authorization headers in apollo studio: "Authorization" with value of "Basic 676cfd34-e706-4cce-87ca-97f947c43bd4"
 - navigate in browser to http://localhost:4000/graphql
 
 
