@@ -32,6 +32,6 @@
     "cross-env": "^7.0.3",
     "mongodb-memory-server": "7.3.6",
     "mongodb-memory-server-core": "7.3.6",
-    "mongodb-memory-server-global": "7.3.6"
+    "mongodb-memory-server-global": "8.10.0"
   }
 }
